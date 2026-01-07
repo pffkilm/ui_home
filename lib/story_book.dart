@@ -1,0 +1,135 @@
+import 'package:flutter/material.dart';
+import 'package:ui_kit/ui_components/input.dart';
+import 'package:ui_kit/ui_kit.dart';
+
+class  Storybook extends StatefulWidget {
+  const Storybook({super.key});
+
+  @override
+  State<Storybook> createState() => _StoryBookState();
+}
+
+class _StoryBookState extends State<Storybook> {
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Center(
+        child: SingleChildScrollView(
+          child: Column(
+              children: [
+                Text("Title 1 - Semibold" ,style: ui.typography.title1Semibold),
+                Text("Title 1 -  ExtraBold" ,style: ui.typography.title1ExtraBold),
+                Text("Title 2 -  Regular " ,style: ui.typography.title2Regular),
+                Text("Title 2 - Semibold " ,style: ui.typography.title2Semibold),
+                Text("Title 2 -  ExtraBold " ,style: ui.typography.title2ExtraBold),
+                Text("Title 3 -  Regular" ,style: ui.typography.title3Regular),
+                Text("Title 3 -  Medium" ,style: ui.typography.title3Medium),
+                Text("Title 3 -  Semibold" ,style: ui.typography.title3Semibold),
+                Text("Headline -  Regular" ,style: ui.typography.headlineRegular),
+                Text("Headline -  Medium " ,style: ui.typography.headlineMedium),
+                Text("Text -  Regular" ,style: ui.typography.textRegular),
+                Text("Text -  Medium " ,style: ui.typography.textMedium),
+                Text("Caption -  Regular" ,style: ui.typography.captionRegular),
+                Text("Caption -  Semibold" ,style: ui.typography.captionSemibold),
+                Text("Caption 2 -  Regular" ,style: ui.typography.caption2Regular),
+                Text("Caption 2 -  Bold" ,style: ui.typography.caption2Bold),
+
+                Wrap(
+                  children: [
+                    _buildColorItem('Accent', ui.colors.accent),
+                    _buildColorItem('Accent Inactive', ui.colors.accentInactive),
+                    _buildColorItem('Black', ui.colors.black),
+                    _buildColorItem('White', ui.colors.white),
+                    _buildColorItem('Error', ui.colors.error),
+                    _buildColorItem('Success', ui.colors.success),
+                    _buildColorItem('Input BG', ui.colors.inputBg),
+                    _buildColorItem('Input Stroke', ui.colors.inputStroke),
+                    _buildColorItem('Input Icon', ui.colors.inputIcon),
+                    _buildColorItem('Placeholder', ui.colors.placeholder),
+                    _buildColorItem('Description', ui.colors.description),
+                    _buildColorItem('Card Stroke', ui.colors.cardStroke),
+                  ],
+                ),
+                Wrap(
+                  children: [
+                    ui.images.check(size: 20),
+                    ui.images.close(size: 20),
+                    ui.images.closeCircle(size: 20),
+                    ui.images.delete(size: 20),
+                    ui.images.down(size: 20),
+                    ui.images.download(size: 20),
+                    ui.images.eye(size: 20),
+                    ui.images.eyeClose(size: 20),
+                    ui.images.file(size: 20),
+                    ui.images.filter(size: 20),
+                    ui.images.left(size: 20),
+                    ui.images.map(size: 20),
+                    ui.images.message(size: 20),
+                    ui.images.minus(size: 20),
+                    ui.images.paperclip(size: 20),
+                    ui.images.plus(size: 20),
+                    ui.images.points(size: 20),
+                    ui.images.search(size: 20),
+                    ui.images.telega(size: 20),
+                    ui.images.shop(size: 20),
+                    ui.images.voice(size: 20),
+                  ],
+                ),
+
+                ui.bigButton.accentButton(text: "Подтвердить", onPressed: (){}, enabled: true),
+                ui.bigButton.accentButton(text: "Подтвердить", enabled: false),
+                ui.bigButton.delete(text: "Подтвердить", onPressed: (){}, ),
+                ui.bigButton.unActiv(text: "Подтвердить", ),
+
+
+                ui.smallButton.accentButton(text: "Добавить", onPressed: (){}, enabled: true),
+                ui.smallButton.accentButton(text: "Добавить", enabled: false),
+                ui.smallButton.delete(text: "Добавить", onPressed: (){}, ),
+                ui.smallButton.unActiv(text: "Добавить", ),
+
+                ui.chipsButton.accentButton(text: "Популярные", onPressed: (){}, ),
+                ui.chipsButton.unActiv(text: "Популярные", ),
+
+                Input(hint: "Введите имя"),
+                SizedBox(height: 28),
+                Input(value: "Иван"),
+                SizedBox(height: 28),
+                Input(label: "Имя",hint: "Введите имя",showValidationBorder: true,),
+                SizedBox(height: 28),
+                Input(hasError: true, helperText: "Введите ваше имя",hint: "Имя"),
+                SizedBox(height: 28),
+                Input(hint: "Введите имя", label: "Имя"),
+                SizedBox(height: 28),
+                Input(value: "Введите имя", label: "Имя"),
+                SizedBox(height: 28),
+                Input(value: "*********",isPassword: true ),
+                SizedBox(height: 28),
+                Input(hint: "--.--.----" )
+              ]
+          ),
+        ),
+      )
+    );
+  }
+
+  Widget _buildColorItem(String name, Color color) {
+    return Column(
+      children: [
+        Container(
+          width: 40,
+          height: 40,
+          decoration: BoxDecoration(
+            color: color,
+            shape: BoxShape.circle,
+          ),
+        ),
+        Container(
+          width: 60,
+          child: Text(name, maxLines: 2, textAlign: TextAlign.center,style: ui.typography.captionRegular,),
+        )
+      ],
+    );
+  }
+}
