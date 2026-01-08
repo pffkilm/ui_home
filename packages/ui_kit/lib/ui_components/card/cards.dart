@@ -10,41 +10,41 @@ class ProductCard {
     required Widget button,
   }) {
     return  ui.background.base(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(
-              child: Text(
-                title,
-                style: ui.typography.headlineMedium,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-              ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+            child: Text(
+              title,
+              style: ui.typography.headlineMedium,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
             ),
-            SizedBox(height: 16),
-            Expanded(
-              child: Row(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      if (subtitle != null)
-                        Text(
-                          subtitle,
-                          style: ui.typography.captionSemibold.copyWith(
-                            color: ui.colors.inputText,
-                          ),
+          ),
+          SizedBox(height: 16),
+          Expanded(
+            child: Row(
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    if (subtitle != null)
+                      Text(
+                        subtitle,
+                        style: ui.typography.captionSemibold.copyWith(
+                          color: ui.colors.inputText,
                         ),
-                      Text('$price ₽', style: ui.typography.title3Semibold),
-                    ],
-                  ),
-                  const Spacer(),
-                  button,
-                ],
-              ),
+                      ),
+                    Text('$price ₽', style: ui.typography.title3Semibold),
+                  ],
+                ),
+                const Spacer(),
+                button,
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
+      ),
     );
   }
 
@@ -164,7 +164,7 @@ class _CartCounterStatefulWidget extends State<_CartCounter> {
                 ),
               ),
 
-               SizedBox(width: 42),
+              SizedBox(width: 42),
 
               _count == 1
                   ? ui.counter.active(
