@@ -8,7 +8,7 @@ class AppColors{
   final Color error = const Color(0xFFFF4646);
   final Color success = const Color(0xFF00B412);
 
-  final Color inputBg = const Color.fromRGBO(247, 247, 250, 1);
+  final Color inputBg = const Color(0xFFF7F7FA);
   final Color inputStroke = const Color(0xFFE6E6E6);
   final Color inputIcon = const Color(0xFFBFC7D1);
   final Color placeholder = const Color(0xFF98989A);

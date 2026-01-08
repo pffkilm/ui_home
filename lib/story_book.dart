@@ -77,36 +77,49 @@ class _StoryBookState extends State<Storybook> {
                     ui.images.voice(size: 20),
                   ],
                 ),
+                Column(
+                  children: [
+                    ui.bigButton.accentButton(text: "Подтвердить", onPressed: (){}, enabled: true),
+                    ui.bigButton.accentButton(text: "Подтвердить", enabled: false),
+                    ui.bigButton.delete(text: "Подтвердить", onPressed: (){}, ),
+                    ui.bigButton.unActiv(text: "Подтвердить", ),
 
-                ui.bigButton.accentButton(text: "Подтвердить", onPressed: (){}, enabled: true),
-                ui.bigButton.accentButton(text: "Подтвердить", enabled: false),
-                ui.bigButton.delete(text: "Подтвердить", onPressed: (){}, ),
-                ui.bigButton.unActiv(text: "Подтвердить", ),
 
+                    ui.smallButton.accentButton(text: "Добавить", onPressed: (){}, enabled: true),
+                    ui.smallButton.accentButton(text: "Добавить", enabled: false),
+                    ui.smallButton.delete(text: "Добавить", onPressed: (){}, ),
+                    ui.smallButton.unActiv(text: "Добавить", ),
 
-                ui.smallButton.accentButton(text: "Добавить", onPressed: (){}, enabled: true),
-                ui.smallButton.accentButton(text: "Добавить", enabled: false),
-                ui.smallButton.delete(text: "Добавить", onPressed: (){}, ),
-                ui.smallButton.unActiv(text: "Добавить", ),
+                    ui.chipsButton.accentButton(text: "Популярные", onPressed: (){}, ),
+                    ui.chipsButton.unActiv(text: "Популярные", ),
+                  ],
+                ),
+                ui.counter.active(),
+                ui.counter.unActiv(),
 
-                ui.chipsButton.accentButton(text: "Популярные", onPressed: (){}, ),
-                ui.chipsButton.unActiv(text: "Популярные", ),
+                Column(
+                  children: [
+                    Input(hint: 'Введите имя',showValidationBorder: true,),
+                    SizedBox(height: 28),
+                    Input( value: 'Иван' , showValidationBorder: true,),
+                    SizedBox(height: 28),
+                    Input(label: 'Иван' ,showValidationBorder: true,hint: 'Введите имя'),
+                    SizedBox(height: 28),
+                    Input( hasError: true,hint: 'Имя',helperText: 'Введите ваше имя',),
+                    SizedBox(height: 28),
+                    Input(label: 'Имя',hint: 'Введите имя'),
+                    SizedBox(height: 28),
+                    Input(label: 'Имя', value: 'Введите имя'),
+                    SizedBox(height: 28),
+                    Input(value: '*********', isPassword: true,),
+                    SizedBox(height: 28),
+                    Input(hint: '--.--.----'),
+                    SizedBox(height: 28),
 
-                Input(hint: "Введите имя"),
-                SizedBox(height: 28),
-                Input(value: "Иван"),
-                SizedBox(height: 28),
-                Input(label: "Имя",hint: "Введите имя",showValidationBorder: true,),
-                SizedBox(height: 28),
-                Input(hasError: true, helperText: "Введите ваше имя",hint: "Имя"),
-                SizedBox(height: 28),
-                Input(hint: "Введите имя", label: "Имя"),
-                SizedBox(height: 28),
-                Input(value: "Введите имя", label: "Имя"),
-                SizedBox(height: 28),
-                Input(value: "*********",isPassword: true ),
-                SizedBox(height: 28),
-                Input(hint: "--.--.----" )
+                  ],
+                ),
+                ui.background.base(height: 138),
+
               ]
           ),
         ),
@@ -125,7 +138,7 @@ class _StoryBookState extends State<Storybook> {
             shape: BoxShape.circle,
           ),
         ),
-        Container(
+        SizedBox(
           width: 60,
           child: Text(name, maxLines: 2, textAlign: TextAlign.center,style: ui.typography.captionRegular,),
         )

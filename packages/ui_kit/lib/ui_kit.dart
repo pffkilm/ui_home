@@ -6,11 +6,16 @@ import 'package:ui_kit/images.dart';
 import 'package:ui_kit/typography.dart';
 import 'package:ui_kit/ui_components/button/chipsButton.dart';
 import 'package:ui_kit/ui_components/button/smallButton.dart';
+import 'package:ui_kit/ui_components/card/card_background.dart';
+import 'package:ui_kit/ui_components/controllers/counter.dart';
+
 
 export 'colors.dart';
 export 'typography.dart';
 export 'ui_components/button/bigButton.dart';
 export 'images.dart';
+export 'ui_components/card/card_background.dart';
+export 'ui_components/controllers/counter.dart';
 
 
 class MatuleKit{
@@ -25,6 +30,8 @@ class MatuleKit{
   BigButton get bigButton => BigButton();
   SmallButton get smallButton => SmallButton();
   ChipsButton get chipsButton => ChipsButton();
+  CardBackground get  background => CardBackground();
+  Counter get counter => Counter();
 
 }
 final ui = MatuleKit();
