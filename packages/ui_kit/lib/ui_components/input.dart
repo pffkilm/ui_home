@@ -1,45 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:ui_kit/ui_kit.dart';
 
-
-class  Input extends StatefulWidget {
+class Input extends StatefulWidget {
   final String? label;
   final String? hint;
-  final String? helperText;
   final String? value;
   final bool isPassword;
-  final bool showValidationBorder;
   final bool showEyeIcon;
-  final bool hasError;
   final Function(String)? onChanged;
+  final bool showValidationBorder;
+  final bool hasError;
+  final String? helperText;
 
   const Input({
     super.key,
     this.label,
     this.hint,
-    this.helperText,
     this.value = '',
     this.isPassword = false,
-    this.showValidationBorder = false,
     this.showEyeIcon = true,
-    this.hasError = false,
     this.onChanged,
+    this.showValidationBorder = false,
+    this.hasError = false,
+    this.helperText,
   });
 
-
   @override
-  State<Input> createState() => _InputState();
+  State<Input> createState() => _SimpleInputState();
 }
 
-class _InputState extends State<Input> {
+class _SimpleInputState extends State<Input> {
   late TextEditingController _controller;
-  bool _isFocus = false;
   bool _showPassword = false;
+  bool _isFocused = false;
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
     _controller = TextEditingController(text: widget.value);
+    _showPassword = false;
   }
 
   @override
@@ -47,98 +46,112 @@ class _InputState extends State<Input> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if(widget.label != null)...[
+        // Лейбл
+        if (widget.label != null)
           Text(
             widget.label!,
             style: ui.typography.captionRegular.copyWith(
-              color: ui.colors.description
+              color: ui.colors.description,
             ),
           ),
-          SizedBox(height: 8)
-        ],
+        const SizedBox(height: 8),
+
+        // Поле ввода
         SizedBox(
           width: 335,
           height: 48,
-          child: Focus(
-              child: FocusScope(
-                onFocusChange: (hasFocus){
-                  setState(() => _isFocus = hasFocus);
-                },
-                  child: TextFormField(
-                    controller: _controller,
-                    obscureText: widget.isPassword && !_showPassword,
-                    obscuringCharacter: '*',
-                    cursorColor:
-                      widget.hasError ? ui.colors.error : ui.colors.accent,
-                    decoration: InputDecoration(
-                      hintText: widget.hint,
-                      hintStyle: ui.typography.textRegular.copyWith(
-                        color: ui.colors.inputText
-                      ),
+          child: FocusScope(
+            child: Focus(
+              onFocusChange: (hasFocus) {
+                setState(() => _isFocused = hasFocus);
+              },
+              child: TextFormField(
+                controller: _controller,
+                obscureText: widget.isPassword && !_showPassword,
+                obscuringCharacter: '*',
+                cursorColor:
+                widget.hasError ? ui.colors.error : ui.colors.accent,
+                decoration: InputDecoration(
+                  hintText: widget.hint,
+                  hintStyle: ui.typography.textRegular.copyWith(
+                    color: ui.colors.description,
+                  ),
+                  // Заливка
+                  filled: true,
+                  fillColor: widget.hasError
+                      ? Color(0x1AFD3535)
+                      : ui.colors.input,
 
-                      filled: true,
-                      fillColor: widget.hasError
-                        ? Color(0x1AFD3535) : ui.colors.input,
-
-                      suffixIcon: widget.isPassword && widget.showEyeIcon
-                        ? IconButton(
-                          onPressed: (){
-                            setState(() => _showPassword = !_showPassword );
-                          },
-                          icon: _showPassword
+                  // Иконка глаза для пароля
+                  suffixIcon: widget.isPassword && widget.showEyeIcon
+                      ? IconButton(
+                    icon: _showPassword
                         ? ui.images.eye(size: 20)
                         : ui.images.eyeClose(size: 20),
-                       )
-                      : null,
-                      enabledBorder: _buildBorder(_getBorderColor()),
-                      focusedBorder: _buildBorder(
-                        widget.hasError
-                            ? Color(0xAFD35351A)
-                            : ui.colors.accent.withOpacity(0.5)
-                      )
-                    ),
-                    onChanged: (text){
-                      widget.onChanged?.call(text);
+                    onPressed: () {
+                      setState(() => _showPassword = !_showPassword);
                     },
                   )
-              )
+                      : null,
+
+                  // Границы
+                  border: _buildBorder(_getBorderColor(), 1),
+                  focusedBorder: _buildBorder(
+                      widget.hasError
+                          ? ui.colors.error
+                          : ui.colors.accent.withOpacity(0.5),
+                      2),
+                  enabledBorder: _buildBorder(_getBorderColor(), 1),
+                ),
+                onChanged: (text) {
+                  widget.onChanged?.call(text);
+                },
+              ),
+            ),
           ),
         ),
-         if(widget.helperText != null)...[
-           SizedBox(height: 8),
-           Text(
-             widget.helperText!,
-             style: ui.typography.captionRegular.copyWith(
-               color: ui.colors.error
-             ),
-           )
-         ],
+
+        // Helper текст
+        if (widget.helperText != null) ...[
+          const SizedBox(height: 4),
+          Text(
+            widget.helperText!,
+            style: TextStyle(
+              fontSize: 12,
+              color:
+              widget.hasError ? ui.colors.error : ui.colors.inputBackground,
+            ),
+          ),
+        ],
       ],
     );
   }
 
-  OutlineInputBorder _buildBorder(Color color){
+  OutlineInputBorder _buildBorder(Color color, double width) {
     return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(10),
-      borderSide: BorderSide(color: color,width: 1 )
+      borderRadius: BorderRadius.circular(8),
+      borderSide: BorderSide(color: color, width: width),
     );
   }
 
-  Color _getBorderColor(){
-    if(_isFocus){
-      return ui.colors.accent.withOpacity(0.5);
+  Color _getBorderColor() {
+    if (_isFocused) {
+      return widget.hasError ? ui.colors.error : ui.colors.accent;
     }
-    if(widget.hasError){
+
+    if (widget.hasError) {
       return ui.colors.error;
     }
-    if(widget.showValidationBorder && _controller.text.isNotEmpty){
+
+    if (widget.showValidationBorder && _controller.text.isNotEmpty) {
       return ui.colors.inputBackground;
     }
-    return ui.colors.inputStroke2;
+
+    return ui.colors.inputStroke2 ;
   }
 
   @override
-  void dispose(){
+  void dispose() {
     _controller.dispose();
     super.dispose();
   }

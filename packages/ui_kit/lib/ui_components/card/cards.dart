@@ -35,7 +35,6 @@ class ProductCard {
                             color: ui.colors.inputText,
                           ),
                         ),
-
                       Text('$price ₽', style: ui.typography.title3Semibold),
                     ],
                   ),
@@ -55,6 +54,7 @@ class ProductCard {
     required Widget button,
   }) {
     return ui.background.base(
+      height: 136,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -69,9 +69,10 @@ class ProductCard {
                     style: ui.typography.captionSemibold.copyWith(
                       color: const Color(0xFF939396),
                     ),
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
                   ),
                 ),
-                SizedBox(width: 90),
 
               if (subtitle == null) Spacer(),
               button,
@@ -84,37 +85,33 @@ class ProductCard {
 
   Widget cartCounter({
     required String title,
-    String? subtitle,
     required String price,
     required VoidCallback onRemove,
   }) {
-    return _CartCounterStatefulWidget(
+    return _CartCounter(
       title: title,
-      subtitle: subtitle,
       price: price,
       onRemove: onRemove,
     );
   }
 }
 
-class _CartCounterStatefulWidget extends StatefulWidget {
+class _CartCounter extends StatefulWidget {
   final String title;
-  final String? subtitle;
   final String price;
   final VoidCallback onRemove;
 
-  const _CartCounterStatefulWidget({
+  const _CartCounter({
     required this.title,
-    this.subtitle,
     required this.price,
     required this.onRemove,
   });
 
   @override
-  State<_CartCounterStatefulWidget> createState() => _CartItemStatefulWidgetState();
+  State<_CartCounter> createState() => _CartCounterStatefulWidget();
 }
 
-class _CartItemStatefulWidgetState extends State<_CartCounterStatefulWidget> {
+class _CartCounterStatefulWidget extends State<_CartCounter> {
   int _count = 1;
 
   void _increment() {
@@ -151,17 +148,7 @@ class _CartItemStatefulWidgetState extends State<_CartCounterStatefulWidget> {
               ),
             ],
           ),
-          if (widget.subtitle != null) ...[
-            const SizedBox(height: 8),
-            Text(
-              widget.subtitle!,
-              style: ui.typography.captionSemibold.copyWith(
-                color: const Color(0xFF939396),
-              ),
-            ),
-          ],
-
-          const SizedBox(height: 20),
+          Spacer(),
 
           Row(
             children: [
@@ -169,9 +156,7 @@ class _CartItemStatefulWidgetState extends State<_CartCounterStatefulWidget> {
                   '${widget.price} ₽',
                   style: ui.typography.title3Semibold
               ),
-
-              const Spacer(),
-
+              Spacer(),
               Text(
                 '$_count штук',
                 style: ui.typography.textRegular.copyWith(
@@ -179,7 +164,7 @@ class _CartItemStatefulWidgetState extends State<_CartCounterStatefulWidget> {
                 ),
               ),
 
-              const SizedBox(width: 42),
+               SizedBox(width: 42),
 
               _count == 1
                   ? ui.counter.active(

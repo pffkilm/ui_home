@@ -146,7 +146,7 @@ class _StoryBookState extends State<Storybook> {
                   SizedBox(height: 28),
                 ],
               ),
-              ui.background.base(height: 138),
+              ui.background.base(),
               SizedBox(height: 10),
               ui.productCard.cardButton(
                 title: 'Рубашка Воскресенье для машинного\nвязания',
