@@ -148,7 +148,7 @@ class _StoryBookState extends State<Storybook> {
               ),
               ui.background.base(height: 138),
               SizedBox(height: 10),
-              ui.productCard.card(
+              ui.productCard.cardButton(
                 title: 'Рубашка Воскресенье для машинного\nвязания',
                 subtitle: 'Мужская одежда',
                 price: '300',
@@ -160,20 +160,20 @@ class _StoryBookState extends State<Storybook> {
               ),
               SizedBox(height: 10),
 
-              ui.productCard.card(
+              ui.productCard.cardButton(
                 title: 'Рубашка Воскресенье для машинного\nвязания',
                 subtitle: 'Мужская одежда',
                 price: '300',
                 button: ui.smallButton.delete(text: "Убрать", onPressed: () {}),
               ),
               SizedBox(height: 10),
-              ui.productCard.cartItem(
+              ui.productCard.cartCounter(
                 title: 'Рубашка Воскресенье для машинного вязания',
                 price: '300',
                 onRemove: () {},
               ),
               SizedBox(height: 10),
-              ui.productCard.noPrice(
+              ui.productCard.noPriceCard(
                 title: 'Мой первый проект',
                 subtitle: 'Прошло 2 дня',
                 button: ui.smallButton.accentButton(
@@ -182,6 +182,7 @@ class _StoryBookState extends State<Storybook> {
                   enabled: true,
                 ),
               ),
+              SizedBox(height: 150),
             ],
           ),
         ),

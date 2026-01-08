@@ -9,8 +9,7 @@ class ProductCard {
     required String price,
     required Widget button,
   }) {
-    return IntrinsicHeight(
-      child: ui.background.base(
+    return  ui.background.base(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -29,14 +28,14 @@ class ProductCard {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      if (subtitle != null) ...[
+                      if (subtitle != null)
                         Text(
                           subtitle,
                           style: ui.typography.captionSemibold.copyWith(
                             color: ui.colors.inputText,
                           ),
                         ),
-                      ],
+
                       Text('$price ₽', style: ui.typography.title3Semibold),
                     ],
                   ),
@@ -47,7 +46,6 @@ class ProductCard {
             ),
           ],
         ),
-      ),
     );
   }
 
@@ -57,15 +55,14 @@ class ProductCard {
     required Widget button,
   }) {
     return ui.background.base(
-      height: 136,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(title, style: ui.typography.headlineMedium),
-          SizedBox(height: 36),
+          Spacer(),
           Row(
             children: [
-              if (subtitle != null) ...[
+              if (subtitle != null)
                 Expanded(
                   child: Text(
                     subtitle,
@@ -74,8 +71,8 @@ class ProductCard {
                     ),
                   ),
                 ),
-                const SizedBox(width: 90),
-              ],
+                SizedBox(width: 90),
+
               if (subtitle == null) Spacer(),
               button,
             ],
@@ -135,7 +132,6 @@ class _CartItemStatefulWidgetState extends State<_CartCounterStatefulWidget> {
   @override
   Widget build(BuildContext context) {
     return ui.background.base(
-      height: 136,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

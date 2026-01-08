@@ -4,7 +4,7 @@ class CardBackground{
   Widget base({ Widget? child, double? height}){
     return  Container(
       width: 335,
-      height: height,
+      height: 138,
       padding:const EdgeInsets.all(16),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
