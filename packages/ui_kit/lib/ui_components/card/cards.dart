@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:ui_kit/ui_kit.dart';
 
 class ProductCard {
-
   Widget cardButton({
     required String title,
     String? subtitle,
     required String price,
     required Widget button,
   }) {
-    return  ui.background.base(
+    return ui.background.base(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -88,11 +87,7 @@ class ProductCard {
     required String price,
     required VoidCallback onRemove,
   }) {
-    return _CartCounter(
-      title: title,
-      price: price,
-      onRemove: onRemove,
-    );
+    return _CartCounter(title: title, price: price, onRemove: onRemove);
   }
 }
 
@@ -152,10 +147,7 @@ class _CartCounterStatefulWidget extends State<_CartCounter> {
 
           Row(
             children: [
-              Text(
-                  '${widget.price} ₽',
-                  style: ui.typography.title3Semibold
-              ),
+              Text('${widget.price} ₽', style: ui.typography.title3Semibold),
               Spacer(),
               Text(
                 '$_count штук',
@@ -168,13 +160,13 @@ class _CartCounterStatefulWidget extends State<_CartCounter> {
 
               _count == 1
                   ? ui.counter.active(
-                onIncrement: _increment,
-                onDecrement: _decrement,
-              )
+                      onIncrement: _increment,
+                      onDecrement: _decrement,
+                    )
                   : ui.counter.disabled(
-                onIncrement: _increment,
-                onDecrement: _decrement,
-              ),
+                      onIncrement: _increment,
+                      onDecrement: _decrement,
+                    ),
             ],
           ),
         ],
