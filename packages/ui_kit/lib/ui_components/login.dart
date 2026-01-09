@@ -5,9 +5,7 @@ class LogoButtons {
   const LogoButtons();
 
   Widget vk({
-    VoidCallback?
-    onPressed,
-    bool enabled = true
+    VoidCallback? onPressed,
   }) {
     return _buildButton(
       ui.images.vk(size: 32),
@@ -17,9 +15,7 @@ class LogoButtons {
   }
 
   Widget yandex({
-    VoidCallback?
-    onPressed,
-    bool enabled = true
+    VoidCallback? onPressed,
   }) {
     return _buildButton(
       ui.images.yandex(size: 32),
@@ -28,7 +24,7 @@ class LogoButtons {
     );
   }
 
-  // Общий метод для всех соцкнопок
+  // Общий для всех кнопок
   Widget _buildButton(
     Widget icon,
     String text,
