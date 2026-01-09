@@ -22,6 +22,9 @@ class AppImages{
   Image telega({double? size, Color? color}) => _icon('telega',size: size,color: color);
   Image shop({double? size, Color? color}) => _icon('shop',size: size, color: color);
   Image voice({double? size, Color? color}) => _icon('voice', size: size, color: color);
+  Image yandex({double? size, Color? color}) => _icon('yandex', size: size, color: color);
+  Image vk({double? size, Color? color}) => _icon('vk', size: size, color: color);
+
 
 
   Image _icon(String name, {double? size, Color? color}){

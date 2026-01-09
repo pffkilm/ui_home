@@ -101,7 +101,7 @@ class _StoryBookState extends State<Storybook> {
                     enabled: false,
                   ),
                   SizedBox(height: 5),
-                  ui.bigButton.delete(text: "Подтвердить", onPressed: () {}),
+                  ui.bigButton.noAccent(text: "Подтвердить", onPressed: () {}),
                   SizedBox(height: 5),
                   ui.bigButton.unActive(text: "Подтвердить", onPressed: () {}),
                 ],
@@ -208,7 +208,13 @@ class _StoryBookState extends State<Storybook> {
                   enabled: true,
                 ),
               ),
+              SizedBox(height: 10),
+              ui.logo.vk( onPressed: (){} ),
+              SizedBox(height: 10),
+              ui.logo.yandex( onPressed: (){} ,),
+              SizedBox(height: 10),
               ui.search,
+              SizedBox(height: 10),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                   child: Row(

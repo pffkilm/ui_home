@@ -30,14 +30,14 @@ class BigButton{
     );
   }
 
-  Widget delete({
+  Widget noAccent({
     required String text,
     VoidCallback? onPressed,
   }){
     return ElevatedButton(
       onPressed : onPressed,
       style: _baseStyle().copyWith(
-          backgroundColor: WidgetStateProperty.all(ui.colors.white),
+          backgroundColor: WidgetStateProperty.all(Colors.white),
           foregroundColor: WidgetStateProperty.all(ui.colors.accent),
         side: WidgetStateProperty.all(
           BorderSide(

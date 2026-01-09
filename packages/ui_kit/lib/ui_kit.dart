@@ -9,6 +9,7 @@ import 'package:ui_kit/ui_components/button/smallButton.dart';
 import 'package:ui_kit/ui_components/card/card_background.dart';
 import 'package:ui_kit/ui_components/card/cards.dart';
 import 'package:ui_kit/ui_components/controllers/counter.dart';
+import 'package:ui_kit/ui_components/login.dart';
 import 'package:ui_kit/ui_components/search.dart';
 
 
@@ -36,6 +37,7 @@ class MatuleKit{
   ProductCard get productCard => ProductCard();
   Counter get counter => Counter();
   SearchField get search => SearchField();
+  LogoButtons get logo => LogoButtons();
 
 }
 final ui = MatuleKit();
