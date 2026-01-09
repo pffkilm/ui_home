@@ -48,7 +48,7 @@ class SmallButton{
     );
   }
 
-  Widget unActiv({
+  Widget unActive({
     required text,
     VoidCallback? onPressed,
   }){

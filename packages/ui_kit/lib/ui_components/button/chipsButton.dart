@@ -27,7 +27,7 @@ class ChipsButton{
     );
   }
 
-  Widget unActiv({
+  Widget unActive({
     required text,
     VoidCallback? onPressed,
   }){

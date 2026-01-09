@@ -49,7 +49,7 @@ class BigButton{
     );
   }
 
-  Widget unActiv({
+  Widget unActive({
     required String text,
     VoidCallback? onPressed,
 

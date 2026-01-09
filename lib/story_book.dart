@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui_kit/ui_components/input.dart';
+import 'package:ui_kit/ui_components/menu.dart';
 import 'package:ui_kit/ui_kit.dart';
 
 class Storybook extends StatefulWidget {
@@ -10,6 +11,8 @@ class Storybook extends StatefulWidget {
 }
 
 class _StoryBookState extends State<Storybook> {
+  int _selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -90,33 +93,53 @@ class _StoryBookState extends State<Storybook> {
                   ui.bigButton.accentButton(
                     text: "Подтвердить",
                     onPressed: () {},
-                    enabled: true,
                   ),
+                  SizedBox(height: 5),
                   ui.bigButton.accentButton(
                     text: "Подтвердить",
+                    onPressed: null,
                     enabled: false,
                   ),
+                  SizedBox(height: 5),
                   ui.bigButton.delete(text: "Подтвердить", onPressed: () {}),
-                  ui.bigButton.unActiv(text: "Подтвердить"),
-
+                  SizedBox(height: 5),
+                  ui.bigButton.unActive(text: "Подтвердить", onPressed: () {}),
+                ],
+              ),
+              Column(
+                children: [
                   ui.smallButton.accentButton(
                     text: "Добавить",
                     onPressed: () {},
                     enabled: true,
                   ),
-                  ui.smallButton.accentButton(text: "Добавить", enabled: false),
-                  ui.smallButton.delete(text: "Добавить", onPressed: () {}),
-                  ui.smallButton.unActiv(text: "Добавить"),
+                  SizedBox(height: 5),
 
+                  ui.smallButton.delete(text: "Убрать", onPressed: () {}),
+                  SizedBox(height: 5),
+                  ui.smallButton.accentButton(
+                    text: "Добавить",
+                    onPressed: null,
+                    enabled: false,
+                  ),
+                  SizedBox(height: 5),
+                  ui.smallButton.unActive(text: "Подтвер...", onPressed: () {}),
+                ],
+              ),
+
+              SizedBox(height: 5),
+              Column(
+                children: [
                   ui.chipsButton.accentButton(
                     text: "Популярные",
                     onPressed: () {},
+                    enabled: true,
                   ),
-                  ui.chipsButton.unActiv(text: "Популярные"),
+                  SizedBox(height: 5),
+                  ui.chipsButton.unActive(text: "Популярные", onPressed: () {}),
                 ],
               ),
-              ui.counter.active(),
-              ui.counter.disabled(),
+              SizedBox(height: 5),
 
               Column(
                 children: [
@@ -146,6 +169,9 @@ class _StoryBookState extends State<Storybook> {
                   SizedBox(height: 28),
                 ],
               ),
+              ui.counter.active(),
+              ui.counter.disabled(),
+              SizedBox(height: 10),
               ui.background.base(),
               SizedBox(height: 10),
               ui.productCard.cardButton(
@@ -182,7 +208,23 @@ class _StoryBookState extends State<Storybook> {
                   enabled: true,
                 ),
               ),
-              SizedBox(height: 150),
+              ui.search,
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      Menu(text: 'Популярные', isActive: _selectedIndex == 0),
+                      SizedBox( width: 16),
+                      Menu(text: 'Женщинам',),
+                      SizedBox( width: 16),
+                      Menu(text: 'Мужчинам',),
+                      SizedBox( width: 16),
+                      Menu(text: 'Детям',),
+                      SizedBox( width: 16),
+                      Menu(text: 'Аксессуары',),
+                    ],
+                  ),
+                ),
             ],
           ),
         ),
