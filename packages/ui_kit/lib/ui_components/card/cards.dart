@@ -160,13 +160,13 @@ class _CartCounterStatefulWidget extends State<_CartCounter> {
 
               _count == 1
                   ? ui.counter.active(
-                      onIncrement: _increment,
-                      onDecrement: _decrement,
-                    )
+                onIncrement: _increment,
+                onDecrement: _decrement,
+              )
                   : ui.counter.disabled(
-                      onIncrement: _increment,
-                      onDecrement: _decrement,
-                    ),
+                onIncrement: _increment,
+                onDecrement: _decrement,
+              ),
             ],
           ),
         ],

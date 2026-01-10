@@ -15,10 +15,9 @@ class ChipsButton{
   Widget accentButton({
     required text,
     VoidCallback? onPressed,
-    bool enabled = true,
 }){
     return ElevatedButton(
-        onPressed: enabled ? onPressed : null,
+        onPressed:  onPressed ,
         style: _baseStyle().copyWith(
           backgroundColor: WidgetStateProperty.all(ui.colors.accent),
           foregroundColor: WidgetStateProperty.all(ui.colors.white)

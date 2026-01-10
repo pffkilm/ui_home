@@ -5,11 +5,11 @@ class BigButton{
 
   ButtonStyle _baseStyle(){
     return ElevatedButton.styleFrom(
-      minimumSize: const Size(335, 56),
-      padding: EdgeInsets.symmetric(horizontal: 115,vertical: 16),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
-      )
+        minimumSize: const Size(335, 56),
+        padding: EdgeInsets.symmetric(horizontal: 115,vertical: 16),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        )
     );
   }
 
@@ -21,10 +21,10 @@ class BigButton{
     return ElevatedButton(
       onPressed : enabled ? onPressed : null,
       style: _baseStyle().copyWith(
-        backgroundColor: WidgetStateProperty.resolveWith<Color>(
-            (states) => enabled ? ui.colors.accent : ui.colors.accentInactive,
-        ),
-        foregroundColor: WidgetStateProperty.all(ui.colors.white)
+          backgroundColor: WidgetStateProperty.resolveWith<Color>(
+                (states) => enabled ? ui.colors.accent : ui.colors.accentInactive,
+          ),
+          foregroundColor: WidgetStateProperty.all(ui.colors.white)
       ),
       child: _buildText(text),
     );
@@ -39,11 +39,11 @@ class BigButton{
       style: _baseStyle().copyWith(
           backgroundColor: WidgetStateProperty.all(Colors.white),
           foregroundColor: WidgetStateProperty.all(ui.colors.accent),
-        side: WidgetStateProperty.all(
-          BorderSide(
-            color: ui.colors.accent
+          side: WidgetStateProperty.all(
+              BorderSide(
+                  color: ui.colors.accent
+              )
           )
-        )
       ),
       child: _buildText(text),
     );
@@ -57,8 +57,8 @@ class BigButton{
     return ElevatedButton(
       onPressed : onPressed,
       style: _baseStyle().copyWith(
-          backgroundColor: WidgetStateProperty.all(ui.colors.inputBg),
-          foregroundColor: WidgetStateProperty.all(ui.colors.black),
+        backgroundColor: WidgetStateProperty.all(ui.colors.inputBg),
+        foregroundColor: WidgetStateProperty.all(ui.colors.black),
       ),
       child: _buildText(text),
     );

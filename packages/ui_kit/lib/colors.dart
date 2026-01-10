@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppColors{
+
   final Color accent = const Color(0xFF2074F2);
   final Color accentInactive = const Color(0xFFC5D2FF);
   final Color black = const Color(0xFF2D2C2C);

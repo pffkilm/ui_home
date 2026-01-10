@@ -24,6 +24,10 @@ class AppImages{
   Image voice({double? size, Color? color}) => _icon('voice', size: size, color: color);
   Image yandex({double? size, Color? color}) => _icon('yandex', size: size, color: color);
   Image vk({double? size, Color? color}) => _icon('vk', size: size, color: color);
+  Image home({double? size, Color? color}) => _icon('home',size: size, color: color);
+  Image katalog({double? size, Color? color}) => _icon('katalog', size: size, color: color);
+  Image profile({double? size, Color? color}) => _icon('profile', size: size, color: color);
+  Image project({double? size, Color? color}) => _icon('project', size: size, color: color);
 
 
 

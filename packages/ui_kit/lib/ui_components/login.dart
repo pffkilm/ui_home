@@ -26,10 +26,10 @@ class LogoButtons {
 
   // Общий для всех кнопок
   Widget _buildButton(
-    Widget icon,
-    String text,
-    VoidCallback? onPressed,
-  ) {
+      Widget icon,
+      String text,
+      VoidCallback? onPressed,
+      ) {
     return SizedBox(
       width: 335,
       height: 60,

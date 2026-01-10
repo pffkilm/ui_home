@@ -133,7 +133,6 @@ class _StoryBookState extends State<Storybook> {
                   ui.chipsButton.accentButton(
                     text: "Популярные",
                     onPressed: () {},
-                    enabled: true,
                   ),
                   SizedBox(height: 5),
                   ui.chipsButton.unActive(text: "Популярные", onPressed: () {}),
@@ -231,6 +230,12 @@ class _StoryBookState extends State<Storybook> {
                     ],
                   ),
                 ),
+
+              ui.bottomNavigation.create(initialIndex: 0),
+              ui.bottomNavigation.create(initialIndex: 1),
+              ui.bottomNavigation.create(initialIndex: 2),
+              ui.bottomNavigation.create(initialIndex: 3),
+
             ],
           ),
         ),
