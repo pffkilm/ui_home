@@ -38,7 +38,6 @@ class _SimpleInputState extends State<Input> {
   void initState() {
     super.initState();
     _controller = TextEditingController(text: widget.value);
-    _showPassword = false;
   }
 
   @override

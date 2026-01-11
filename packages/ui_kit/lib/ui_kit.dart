@@ -9,6 +9,7 @@ import 'package:ui_kit/ui_components/button/smallButton.dart';
 import 'package:ui_kit/ui_components/card/card_background.dart';
 import 'package:ui_kit/ui_components/card/cards.dart';
 import 'package:ui_kit/ui_components/controllers/counter.dart';
+import 'package:ui_kit/ui_components/controllers/toggle.dart';
 import 'package:ui_kit/ui_components/login.dart';
 import 'package:ui_kit/ui_components/search.dart';
 import 'package:ui_kit/ui_components/tabBar.dart';
@@ -40,6 +41,7 @@ class MatuleKit{
   SearchField get search => SearchField();
   LogoButtons get logo => LogoButtons();
   BottomNavigationHelper get bottomNavigation => BottomNavigationHelper();
+  Toggle get toggle =>  Toggle();
 
 }
 final ui = MatuleKit();

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_kit/ui_components/controllers/toggle.dart';
 import 'package:ui_kit/ui_components/input.dart';
 import 'package:ui_kit/ui_components/menu.dart';
 import 'package:ui_kit/ui_kit.dart';
@@ -235,6 +236,16 @@ class _StoryBookState extends State<Storybook> {
               ui.bottomNavigation.create(initialIndex: 1),
               ui.bottomNavigation.create(initialIndex: 2),
               ui.bottomNavigation.create(initialIndex: 3),
+              Toggle(
+                isActive: false,
+                onChanged: (value) {
+                },
+              ),
+              Toggle(
+                isActive: true,
+                onChanged: (value) {
+                },
+              ),
 
             ],
           ),
