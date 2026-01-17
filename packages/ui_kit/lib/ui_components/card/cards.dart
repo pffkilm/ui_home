@@ -21,8 +21,7 @@ class ProductCard {
             ),
           ),
           SizedBox(height: 16),
-          Expanded(
-            child: Row(
+          Row(
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,7 +40,6 @@ class ProductCard {
                 button,
               ],
             ),
-          ),
         ],
       ),
     );

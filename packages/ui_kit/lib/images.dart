@@ -28,18 +28,19 @@ class AppImages{
   Image katalog({double? size, Color? color}) => _icon('katalog', size: size, color: color);
   Image profile({double? size, Color? color}) => _icon('profile', size: size, color: color);
   Image project({double? size, Color? color}) => _icon('project', size: size, color: color);
+  Image cart({double? size, Color? color}) => _icon('cart', size: size, color: color);
+
 
 
 
   Image _icon(String name, {double? size, Color? color}){
     return Image.asset(
         'packages/ui_kit/assets/images/$name.png',
-      height: size,
-      width: size,
-      color: color
+        height: size,
+        width: size,
+        color: color
 
     );
   }
 
 }
-

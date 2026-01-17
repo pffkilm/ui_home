@@ -89,86 +89,69 @@ class _StoryBookState extends State<Storybook> {
                   ui.images.voice(size: 20),
                 ],
               ),
-              Column(
-                children: [
-                  ui.bigButton.accentButton(
-                    text: "Подтвердить",
-                    onPressed: () {},
-                  ),
-                  SizedBox(height: 5),
-                  ui.bigButton.accentButton(
-                    text: "Подтвердить",
-                    onPressed: null,
-                    enabled: false,
-                  ),
-                  SizedBox(height: 5),
-                  ui.bigButton.noAccent(text: "Подтвердить", onPressed: () {}),
-                  SizedBox(height: 5),
-                  ui.bigButton.unActive(text: "Подтвердить", onPressed: () {}),
-                ],
-              ),
-              Column(
-                children: [
-                  ui.smallButton.accentButton(
-                    text: "Добавить",
-                    onPressed: () {},
-                    enabled: true,
-                  ),
-                  SizedBox(height: 5),
 
-                  ui.smallButton.delete(text: "Убрать", onPressed: () {}),
-                  SizedBox(height: 5),
-                  ui.smallButton.accentButton(
-                    text: "Добавить",
-                    onPressed: null,
-                    enabled: false,
-                  ),
-                  SizedBox(height: 5),
-                  ui.smallButton.unActive(text: "Подтвер...", onPressed: () {}),
-                ],
-              ),
-
+              ui.bigButton.accentButton(text: "Подтвердить", onPressed: () {}),
               SizedBox(height: 5),
-              Column(
-                children: [
-                  ui.chipsButton.accentButton(
-                    text: "Популярные",
-                    onPressed: () {},
-                  ),
-                  SizedBox(height: 5),
-                  ui.chipsButton.unActive(text: "Популярные", onPressed: () {}),
-                ],
+              ui.bigButton.accentButton(
+                text: "Подтвердить",
+                onPressed: null,
+                enabled: false,
+              ),
+              SizedBox(height: 5),
+              ui.bigButton.noAccent(text: "Подтвердить", onPressed: () {}),
+              SizedBox(height: 5),
+              ui.bigButton.unActive(text: "Подтвердить", onPressed: () {}),
+
+              ui.smallButton.accentButton(
+                text: "Добавить",
+                onPressed: () {},
+                enabled: true,
               ),
               SizedBox(height: 5),
 
-              Column(
-                children: [
-                  Input(hint: 'Введите имя', showValidationBorder: true),
-                  SizedBox(height: 28),
-                  Input(value: 'Иван', showValidationBorder: true),
-                  SizedBox(height: 28),
-                  Input(
-                    label: 'Иван',
-                    showValidationBorder: true,
-                    hint: 'Введите имя',
-                  ),
-                  SizedBox(height: 28),
-                  Input(
-                    hasError: true,
-                    hint: 'Имя',
-                    helperText: 'Введите ваше имя',
-                  ),
-                  SizedBox(height: 28),
-                  Input(label: 'Имя', hint: 'Введите имя'),
-                  SizedBox(height: 28),
-                  Input(label: 'Имя', value: 'Введите имя'),
-                  SizedBox(height: 28),
-                  Input(value: '*********', isPassword: true),
-                  SizedBox(height: 28),
-                  Input(hint: '--.--.----'),
-                  SizedBox(height: 28),
-                ],
+              ui.smallButton.delete(text: "Убрать", onPressed: () {}),
+              SizedBox(height: 5),
+              ui.smallButton.accentButton(
+                text: "Добавить",
+                onPressed: null,
+                enabled: false,
               ),
+              SizedBox(height: 5),
+              ui.smallButton.unActive(text: "Подтвер...", onPressed: () {}),
+
+              SizedBox(height: 5),
+
+              ui.chipsButton.accentButton(text: "Популярные", onPressed: () {}),
+              SizedBox(height: 5),
+              ui.chipsButton.unActive(text: "Популярные", onPressed: () {}),
+
+              SizedBox(height: 5),
+
+              Input(hint: 'Введите имя', showValidationBorder: true),
+              SizedBox(height: 28),
+              Input(value: 'Иван', showValidationBorder: true),
+              SizedBox(height: 28),
+              Input(
+                label: 'Иван',
+                showValidationBorder: true,
+                hint: 'Введите имя',
+              ),
+              SizedBox(height: 28),
+              Input(
+                hasError: true,
+                hint: 'Имя',
+                helperText: 'Введите ваше имя',
+              ),
+              SizedBox(height: 28),
+              Input(label: 'Имя', hint: 'Введите имя'),
+              SizedBox(height: 28),
+              Input(label: 'Имя', value: 'Введите имя'),
+              SizedBox(height: 28),
+              Input(value: '*********', isPassword: true),
+              SizedBox(height: 28),
+              Input(hint: '--.--.----'),
+              SizedBox(height: 28),
+
               ui.counter.active(),
               ui.counter.disabled(),
               SizedBox(height: 10),
@@ -209,44 +192,35 @@ class _StoryBookState extends State<Storybook> {
                 ),
               ),
               SizedBox(height: 10),
-              ui.logo.vk( onPressed: (){} ),
+              ui.logo.vk(onPressed: () {}),
               SizedBox(height: 10),
-              ui.logo.yandex( onPressed: (){} ,),
+              ui.logo.yandex(onPressed: () {}),
               SizedBox(height: 10),
               ui.search,
               SizedBox(height: 10),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      Menu(text: 'Популярные', isActive: _selectedIndex == 0),
-                      SizedBox( width: 16),
-                      Menu(text: 'Женщинам',),
-                      SizedBox( width: 16),
-                      Menu(text: 'Мужчинам',),
-                      SizedBox( width: 16),
-                      Menu(text: 'Детям',),
-                      SizedBox( width: 16),
-                      Menu(text: 'Аксессуары',),
-                    ],
-                  ),
+                child: Row(
+                  children: [
+                    Menu(text: 'Популярные', isActive: _selectedIndex == 0),
+                    SizedBox(width: 16),
+                    Menu(text: 'Женщинам'),
+                    SizedBox(width: 16),
+                    Menu(text: 'Мужчинам'),
+                    SizedBox(width: 16),
+                    Menu(text: 'Детям'),
+                    SizedBox(width: 16),
+                    Menu(text: 'Аксессуары'),
+                  ],
                 ),
+              ),
 
               ui.bottomNavigation.create(initialIndex: 0),
               ui.bottomNavigation.create(initialIndex: 1),
               ui.bottomNavigation.create(initialIndex: 2),
               ui.bottomNavigation.create(initialIndex: 3),
-              Toggle(
-                isActive: false,
-                onChanged: (value) {
-                },
-              ),
-              Toggle(
-                isActive: true,
-                onChanged: (value) {
-                },
-              ),
-
+              Toggle(isActive: false, onChanged: (value) {}),
+              Toggle(isActive: true, onChanged: (value) {}),
             ],
           ),
         ),

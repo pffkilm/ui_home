@@ -16,6 +16,7 @@ import 'package:ui_kit/ui_components/tabBar.dart';
 
 
 export 'colors.dart';
+export 'ui_components/select.dart';
 export 'typography.dart';
 export 'ui_components/button/bigButton.dart';
 export 'images.dart';
@@ -40,7 +41,7 @@ class MatuleKit{
   Counter get counter => Counter();
   SearchField get search => SearchField();
   LogoButtons get logo => LogoButtons();
-  BottomNavigationHelper get bottomNavigation => BottomNavigationHelper();
+  BottomNavigation get bottomNavigation => BottomNavigation();
   Toggle get toggle =>  Toggle();
 
 }

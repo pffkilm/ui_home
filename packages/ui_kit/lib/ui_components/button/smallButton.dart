@@ -5,11 +5,11 @@ class SmallButton{
 
   ButtonStyle _baseStyle(){
     return ElevatedButton.styleFrom(
-      maximumSize:const Size(96, 40),
+        maximumSize:const Size(96, 40),
         padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
-      )
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        )
     );
   }
 
@@ -40,9 +40,9 @@ class SmallButton{
             backgroundColor:WidgetStateProperty.all( Colors.white),
             foregroundColor: WidgetStateProperty.all(ui.colors.accent),
             side: WidgetStateProperty.all(
-            BorderSide(
-            color: ui.colors.accent)
-          )
+                BorderSide(
+                    color: ui.colors.accent)
+            )
         ),
         child:_buildText(text)
     );
@@ -55,8 +55,8 @@ class SmallButton{
     return ElevatedButton(
         onPressed: onPressed,
         style: _baseStyle().copyWith(
-            backgroundColor:WidgetStateProperty.all( ui.colors.white),
-            foregroundColor: WidgetStateProperty.all(ui.colors.black),
+          backgroundColor:WidgetStateProperty.all( ui.colors.white),
+          foregroundColor: WidgetStateProperty.all(ui.colors.black),
         ),
         child:_buildText(text)
     );
