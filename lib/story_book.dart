@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ui_kit/ui_components/controllers/toggle.dart';
-import 'package:ui_kit/ui_components/input.dart';
-import 'package:ui_kit/ui_components/menu.dart';
+import 'package:ui_kit/ui_components/modal.dart';
 import 'package:ui_kit/ui_kit.dart';
 
 class Storybook extends StatefulWidget {
@@ -102,23 +100,13 @@ class _StoryBookState extends State<Storybook> {
               SizedBox(height: 5),
               ui.bigButton.unActive(text: "Подтвердить", onPressed: () {}),
 
-              ui.smallButton.accentButton(
-                text: "Добавить",
-                onPressed: () {},
-                enabled: true,
-              ),
+              ui.smallButton.accentButton(text: "Добавить", onPressed: () {},),
               SizedBox(height: 5),
-
               ui.smallButton.delete(text: "Убрать", onPressed: () {}),
               SizedBox(height: 5),
-              ui.smallButton.accentButton(
-                text: "Добавить",
-                onPressed: null,
-                enabled: false,
-              ),
+              ui.smallButton.accentButton(text: "Добавить", enabled: false,),
               SizedBox(height: 5),
               ui.smallButton.unActive(text: "Подтвер...", onPressed: () {}),
-
               SizedBox(height: 5),
 
               ui.chipsButton.accentButton(text: "Популярные", onPressed: () {}),
@@ -127,21 +115,13 @@ class _StoryBookState extends State<Storybook> {
 
               SizedBox(height: 5),
 
-              Input(hint: 'Введите имя', showValidationBorder: true),
+              Input(hint: 'Введите имя'),
               SizedBox(height: 28),
-              Input(value: 'Иван', showValidationBorder: true),
+              Input(value: 'Иван', showValidationBorder: true,),
               SizedBox(height: 28),
-              Input(
-                label: 'Иван',
-                showValidationBorder: true,
-                hint: 'Введите имя',
-              ),
+              Input(label: 'Иван',hint: 'Введите имя'),
               SizedBox(height: 28),
-              Input(
-                hasError: true,
-                hint: 'Имя',
-                helperText: 'Введите ваше имя',
-              ),
+              Input(hasError: true, hint: 'Имя', helperText: 'Введите ваше имя',),
               SizedBox(height: 28),
               Input(label: 'Имя', hint: 'Введите имя'),
               SizedBox(height: 28),
@@ -198,6 +178,7 @@ class _StoryBookState extends State<Storybook> {
               SizedBox(height: 10),
               ui.search,
               SizedBox(height: 10),
+
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -219,8 +200,10 @@ class _StoryBookState extends State<Storybook> {
               ui.bottomNavigation.create(initialIndex: 1),
               ui.bottomNavigation.create(initialIndex: 2),
               ui.bottomNavigation.create(initialIndex: 3),
+
               Toggle(isActive: false, onChanged: (value) {}),
               Toggle(isActive: true, onChanged: (value) {}),
+
             ],
           ),
         ),

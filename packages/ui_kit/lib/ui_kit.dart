@@ -11,17 +11,23 @@ import 'package:ui_kit/ui_components/card/cards.dart';
 import 'package:ui_kit/ui_components/controllers/counter.dart';
 import 'package:ui_kit/ui_components/controllers/toggle.dart';
 import 'package:ui_kit/ui_components/login.dart';
+import 'package:ui_kit/ui_components/modal.dart';
 import 'package:ui_kit/ui_components/search.dart';
 import 'package:ui_kit/ui_components/tabBar.dart';
+import 'package:ui_kit/ui_components/cartPrice.dart';
 
 
 export 'colors.dart';
-export 'ui_components/select.dart';
 export 'typography.dart';
 export 'ui_components/button/bigButton.dart';
+export 'ui_components/button/chipsButton.dart';
+export 'ui_components/button/smallButton.dart';
 export 'images.dart';
 export 'ui_components/card/card_background.dart';
 export 'ui_components/controllers/counter.dart';
+export 'ui_components/controllers/toggle.dart';
+export 'ui_components/input.dart';
+export 'ui_components/menu.dart';
 
 
 class MatuleKit{
@@ -43,6 +49,8 @@ class MatuleKit{
   LogoButtons get logo => LogoButtons();
   BottomNavigation get bottomNavigation => BottomNavigation();
   Toggle get toggle =>  Toggle();
+  CartPrice get cart => CartPrice();
+  SimpleBottomSheet get modal => SimpleBottomSheet();
 
 }
 final ui = MatuleKit();

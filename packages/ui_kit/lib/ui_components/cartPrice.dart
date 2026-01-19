@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ui_kit/ui_kit.dart';
 
-class Cart {
+class CartPrice {
   Widget cart({required String price}) {
     return Container(
       width: 335,

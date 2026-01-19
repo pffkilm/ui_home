@@ -14,7 +14,6 @@ class AppColors{
   final Color inputIcon = const Color(0xFFBFC7D1);
   final Color placeholder = const Color(0xFF98989A);
   final Color description = const Color(0xFF8787A1);
-
   final Color cardStroke = const Color(0xFFF2F2F2);
 
   // добавление для input

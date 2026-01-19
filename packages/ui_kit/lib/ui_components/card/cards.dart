@@ -9,6 +9,7 @@ class ProductCard {
     required Widget button,
   }) {
     return ui.background.base(
+      height: 138,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -22,24 +23,25 @@ class ProductCard {
           ),
           SizedBox(height: 16),
           Row(
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    if (subtitle != null)
-                      Text(
-                        subtitle,
-                        style: ui.typography.captionSemibold.copyWith(
-                          color: ui.colors.inputText,
-                        ),
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  if (subtitle != null) ...[
+                    Text(
+                      subtitle,
+                      style: ui.typography.captionSemibold.copyWith(
+                        color: ui.colors.inputText,
                       ),
-                    Text('$price ₽', style: ui.typography.title3Semibold),
+                    ),
                   ],
-                ),
-                const Spacer(),
-                button,
-              ],
-            ),
+                  Text('$price ₽', style: ui.typography.title3Semibold),
+                ],
+              ),
+              const Spacer(),
+              button,
+            ],
+          ),
         ],
       ),
     );
@@ -158,13 +160,13 @@ class _CartCounterStatefulWidget extends State<_CartCounter> {
 
               _count == 1
                   ? ui.counter.active(
-                onIncrement: _increment,
-                onDecrement: _decrement,
-              )
+                      onIncrement: _increment,
+                      onDecrement: _decrement,
+                    )
                   : ui.counter.disabled(
-                onIncrement: _increment,
-                onDecrement: _decrement,
-              ),
+                      onIncrement: _increment,
+                      onDecrement: _decrement,
+                    ),
             ],
           ),
         ],

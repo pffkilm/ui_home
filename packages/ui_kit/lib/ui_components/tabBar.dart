@@ -57,19 +57,10 @@ class _TabBarState extends State<_TabBar> {
           widget.onIndexChanged?.call(index);
         },
         type: BottomNavigationBarType.fixed,
-        selectedItemColor: ui.colors.accent,      // #FEE440
-        unselectedItemColor: Color(0xFFB8C1CC),  // #B8C1CC
-        selectedLabelStyle: TextStyle(
-          fontSize: 12,
-          fontWeight: FontWeight.w400,
-          height: 16/12,
-        ),
-        unselectedLabelStyle: TextStyle(
-          fontSize: 12,
-          fontWeight: FontWeight.w400,
-          height: 16/12,
-          color: Color(0xFFB8C1CC),
-        ),
+        selectedItemColor: ui.colors.accent,
+        unselectedItemColor: Color(0xFFB8C1CC),
+        selectedLabelStyle: ui.typography.caption2Regular,
+        unselectedLabelStyle: ui.typography.caption2Regular,
         items: [
           BottomNavigationBarItem(
             icon: _currentIndex == 0

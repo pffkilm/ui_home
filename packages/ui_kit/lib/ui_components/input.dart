@@ -38,6 +38,7 @@ class _SimpleInputState extends State<Input> {
   void initState() {
     super.initState();
     _controller = TextEditingController(text: widget.value);
+    _showPassword = true;
   }
 
   @override
@@ -75,13 +76,13 @@ class _SimpleInputState extends State<Input> {
                   hintStyle: ui.typography.textRegular.copyWith(
                     color: ui.colors.description,
                   ),
-                  // Заливка
+
                   filled: true,
                   fillColor: widget.hasError
-                      ? Color(0x1AFD3535)
-                      : ui.colors.input,
+                      ?Color(0x1AFD3535)
+                      : ui.colors.inputBg,
 
-                  // Иконка глаза для пароля
+
                   suffixIcon: widget.isPassword && widget.showEyeIcon
                       ? IconButton(
                     icon: _showPassword
@@ -110,7 +111,7 @@ class _SimpleInputState extends State<Input> {
           ),
         ),
 
-        // Helper текст
+
         if (widget.helperText != null) ...[
           const SizedBox(height: 4),
           Text(
