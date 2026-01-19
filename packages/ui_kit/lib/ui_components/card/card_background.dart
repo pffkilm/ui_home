@@ -5,7 +5,7 @@ class CardBackground{
     return  Container(
       width: 335,
       height: 138,
-      padding:const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           border: Border.fromBorderSide(

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ui_kit/ui_components/modal.dart';
 import 'package:ui_kit/ui_kit.dart';
 
 class Storybook extends StatefulWidget {
@@ -196,13 +195,15 @@ class _StoryBookState extends State<Storybook> {
                 ),
               ),
 
-              ui.bottomNavigation.create(initialIndex: 0),
-              ui.bottomNavigation.create(initialIndex: 1),
-              ui.bottomNavigation.create(initialIndex: 2),
-              ui.bottomNavigation.create(initialIndex: 3),
+              ui.tabBar.create(initialIndex: 0),
+              ui.tabBar.create(initialIndex: 1),
+              ui.tabBar.create(initialIndex: 2),
+             ui.tabBar.create(initialIndex: 3),
 
               Toggle(isActive: false, onChanged: (value) {}),
               Toggle(isActive: true, onChanged: (value) {}),
+              ui.header.kor1(),
+              ui.header.kor2(),
 
             ],
           ),
