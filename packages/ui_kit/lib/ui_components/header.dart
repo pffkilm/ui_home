@@ -37,11 +37,9 @@ class Header {
       height: 48,
       child: Column(
         children: [
-          // Вся строка с иконкой слева, текстом по центру и иконкой справа
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween, // Распределяем пространство
             children: [
-              // Иконка слева
               Container(
                 width: 32,
                 height: 32,

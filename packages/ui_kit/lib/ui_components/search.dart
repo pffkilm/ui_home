@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:ui_kit/ui_kit.dart';
 
-class SearchField extends StatefulWidget {
-  const SearchField({super.key});
+class SearchClass extends StatefulWidget {
+  final double width;
+
+  const SearchClass({super.key, required this.width});
 
   @override
-  State<SearchField> createState() => _searchState();
+  State<SearchClass> createState() => _searchState();
 }
 
-class _searchState extends State<SearchField> {
+class _searchState extends State<SearchClass> {
   final TextEditingController _controller = TextEditingController();
   final FocusNode _focusNode = FocusNode();
   bool _showClose = false;
