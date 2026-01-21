@@ -14,7 +14,6 @@ import 'package:ui_kit/ui_components/header.dart';
 import 'package:ui_kit/ui_components/login.dart';
 import 'package:ui_kit/ui_components/search.dart';
 import 'package:ui_kit/ui_components/tabBar.dart';
-import 'package:ui_kit/ui_components/cartPrice.dart';
 import 'package:ui_kit/ui_components/tabBar.dart';
 
 
@@ -49,7 +48,6 @@ MatuleKit._internal();
   LogoButtons get logo => LogoButtons();
   BottomNavigation get tabBar => BottomNavigation();
   Toggle get toggle =>  Toggle();
-  CartPrice get cart => CartPrice();
   Header get header => Header();
 
 
