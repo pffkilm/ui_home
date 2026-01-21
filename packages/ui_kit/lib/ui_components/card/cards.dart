@@ -7,8 +7,10 @@ class ProductCard {
     String? subtitle,
     required String price,
     required Widget button,
+    VoidCallback? onCardTap, // ← ДОБАВИЛ: необязательный параметр для нажатия на карточку
   }) {
-    return ui.background.base(
+    // Оборачиваем всю карточку в GestureDetector
+    Widget cardContent = ui.background.base(
       height: 138,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,20 +41,35 @@ class ProductCard {
                 ],
               ),
               const Spacer(),
-              button,
+              // Обернем кнопку в IgnorePointer, чтобы нажатия на кнопку не триггерили onCardTap
+              IgnorePointer(
+                child: button,
+              ),
             ],
           ),
         ],
       ),
     );
+
+    // Если передан onCardTap, оборачиваем в GestureDetector
+    if (onCardTap != null) {
+      return GestureDetector(
+        onTap: onCardTap, // ← Сработает при нажатии на любую часть карточки, кроме кнопки
+        child: cardContent,
+      );
+    }
+
+    // Если onCardTap не передан, возвращаем просто карточку
+    return cardContent;
   }
 
   Widget noPriceCard({
     required String title,
     String? subtitle,
     required Widget button,
+    VoidCallback? onCardTap, // ← ДОБАВИЛ и для этой карточки
   }) {
-    return ui.background.base(
+    Widget cardContent = ui.background.base(
       height: 136,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -74,14 +91,26 @@ class ProductCard {
                 ),
 
               if (subtitle == null) Spacer(),
-              button,
+              IgnorePointer(
+                child: button,
+              ),
             ],
           ),
         ],
       ),
     );
+
+    if (onCardTap != null) {
+      return GestureDetector(
+        onTap: onCardTap,
+        child: cardContent,
+      );
+    }
+
+    return cardContent;
   }
 
+  // cartCounter не изменяем, т.к. это другая логика
   Widget cartCounter({
     required String title,
     required String price,
@@ -91,6 +120,7 @@ class ProductCard {
   }
 }
 
+// Класс _CartCounter оставляем без изменений
 class _CartCounter extends StatefulWidget {
   final String title;
   final String price;
@@ -160,13 +190,13 @@ class _CartCounterStatefulWidget extends State<_CartCounter> {
 
               _count == 1
                   ? ui.counter.active(
-                      onIncrement: _increment,
-                      onDecrement: _decrement,
-                    )
+                onIncrement: _increment,
+                onDecrement: _decrement,
+              )
                   : ui.counter.disabled(
-                      onIncrement: _increment,
-                      onDecrement: _decrement,
-                    ),
+                onIncrement: _increment,
+                onDecrement: _decrement,
+              ),
             ],
           ),
         ],
