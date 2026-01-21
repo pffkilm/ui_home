@@ -7,9 +7,8 @@ class ProductCard {
     String? subtitle,
     required String price,
     required Widget button,
-    VoidCallback? onCardTap, // ← ДОБАВИЛ: необязательный параметр для нажатия на карточку
+    VoidCallback? onCardTap,
   }) {
-    // Оборачиваем всю карточку в GestureDetector
     Widget cardContent = ui.background.base(
       height: 138,
       child: Column(
@@ -41,25 +40,21 @@ class ProductCard {
                 ],
               ),
               const Spacer(),
-              // Обернем кнопку в IgnorePointer, чтобы нажатия на кнопку не триггерили onCardTap
-              IgnorePointer(
-                child: button,
-              ),
+              // УБРАЛ IgnorePointer, оставил просто кнопку
+              button,
             ],
           ),
         ],
       ),
     );
 
-    // Если передан onCardTap, оборачиваем в GestureDetector
     if (onCardTap != null) {
       return GestureDetector(
-        onTap: onCardTap, // ← Сработает при нажатии на любую часть карточки, кроме кнопки
+        onTap: onCardTap,
         child: cardContent,
       );
     }
 
-    // Если onCardTap не передан, возвращаем просто карточку
     return cardContent;
   }
 
@@ -67,7 +62,7 @@ class ProductCard {
     required String title,
     String? subtitle,
     required Widget button,
-    VoidCallback? onCardTap, // ← ДОБАВИЛ и для этой карточки
+    VoidCallback? onCardTap,
   }) {
     Widget cardContent = ui.background.base(
       height: 136,
@@ -91,9 +86,8 @@ class ProductCard {
                 ),
 
               if (subtitle == null) Spacer(),
-              IgnorePointer(
-                child: button,
-              ),
+              // УБРАЛ IgnorePointer здесь тоже
+              button,
             ],
           ),
         ],
@@ -110,7 +104,6 @@ class ProductCard {
     return cardContent;
   }
 
-  // cartCounter не изменяем, т.к. это другая логика
   Widget cartCounter({
     required String title,
     required String price,
@@ -120,7 +113,6 @@ class ProductCard {
   }
 }
 
-// Класс _CartCounter оставляем без изменений
 class _CartCounter extends StatefulWidget {
   final String title;
   final String price;
