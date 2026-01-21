@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:ui_kit/ui_kit.dart';
 
 class SearchClass extends StatefulWidget {
-  final double width;
+  final double? width;
 
-  const SearchClass({super.key, required this.width});
+  const SearchClass({super.key,  this.width});
 
   @override
   State<SearchClass> createState() => _searchState();

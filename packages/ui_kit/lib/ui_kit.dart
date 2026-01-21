@@ -45,7 +45,7 @@ MatuleKit._internal();
   CardBackground get  background => CardBackground();
   ProductCard get productCard => ProductCard();
   Counter get counter => Counter();
-  SearchField get search => SearchField();
+  SearchClass get search => SearchClass();
   LogoButtons get logo => LogoButtons();
   BottomNavigation get tabBar => BottomNavigation();
   Toggle get toggle =>  Toggle();
